@@ -8,11 +8,11 @@ $(function(){
     $("#ok").click(ujTermek);
 });
     
-var targy1 = JSON.parse('{ "nev":"Audi R8", "ar":"60 000 000 Ft", "evjarat":"2021", "id":"1"}');
-var targy2 = JSON.parse('{ "nev":"Lamborghini Huracan", "ar":"100 000 000 Ft", "evjarat":"2017", "id":"2"}');
-var targy3 = JSON.parse('{ "nev":"BMW M4", "ar":"20 000 000 Ft", "evjarat":"2016", "id":"3"}');
-var targy4 = JSON.parse('{ "nev":"Ferrari 488", "ar":"120 000 000 Ft", "evjarat":"2020", "id":"4"}');
-var targy5 = JSON.parse('{ "nev":"Mercedes C63S", "ar":"40 000 000 Ft", "evjarat":"2021", "id":"5"}');
+var targy1 = JSON.parse('{ "nev":"Audi R8", "ar":"60 000 000 Ft", "evjarat":"2021"}');
+var targy2 = JSON.parse('{ "nev":"Lamborghini Huracan", "ar":"100 000 000 Ft", "evjarat":"2017"}');
+var targy3 = JSON.parse('{ "nev":"BMW M4", "ar":"20 000 000 Ft", "evjarat":"2016"}');
+var targy4 = JSON.parse('{ "nev":"Ferrari 488", "ar":"120 000 000 Ft", "evjarat":"2020"}');
+var targy5 = JSON.parse('{ "nev":"Mercedes C63S", "ar":"40 000 000 Ft", "evjarat":"2021"}');
 
 var targyak=[targy1,targy2,targy3,targy4,targy5];
 
@@ -27,8 +27,8 @@ function ujTermek() {
 };
 
 function kattintasra() {
-        JelenId=this.id;
-        console.log(JelenId);
-        $(this).remove();
+        JelenId=this.id-1;
+        console.log(targyak[JelenId]);
+        delete targyak[JelenId];
     
 };
